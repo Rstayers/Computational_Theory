@@ -1,0 +1,25 @@
+q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18
+a #
+q4
+q18
+q1 a q2
+q2 & q1
+q3 & q1
+q4 o1 q3
+q2 c1 q5
+q3 c1 q5
+q6 a q7
+q7 & q6
+q8 & q6
+q9 o2 q8
+q7 c2 q10
+q8 c2 q10
+q5 & q9
+q11 # q12
+q10 & q11
+q13 cp1 q14
+q12 & q13
+q15 # q16
+q14 & q15
+q17 cp1 q18
+q16 & q17

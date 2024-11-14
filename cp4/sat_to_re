@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get the directory where the script is located
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <CNF_FILE> <REXEP-FILE> <STRING_FILE>"
+    exit 1
+fi
+
+# Assign arguments to variables
+
+input_string="$1"
+
+# Run the Python script with the provided arguments
+"$script_dir/sat_to_re.py" "$input_string" "$2" "$3"
+

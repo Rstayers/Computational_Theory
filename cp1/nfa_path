@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get the directory where the script is located
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <NFA_FILE> <INPUT_STRING>"
+    exit 1
+fi
+
+# Assign arguments to variables
+nfa_file="$1"
+input_string="$2"
+
+# Run the Python script with the provided arguments
+"$script_dir/nfa_path.py" "$nfa_file" "$input_string"
+

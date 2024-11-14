@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Get the directory where the script is located
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <NFA1> <NFA2>"
+    exit 1
+fi
+
+# Assign arguments to variables
+
+m1="$1"
+m2="$2"
+
+# Run the Python script with the provided arguments
+"$script_dir/concat_nfa.py" "$m1" "$m2"
+

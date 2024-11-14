@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Get the directory where the script is located
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# The script now accepts variable number of arguments, so the argument count check is adjusted.
+# The minimal usage of the script requires at least 3 arguments for the '-f' option (msed -f command file)
+# and at least 2 arguments for the '-e' option (msed -e command), hence no fixed number of arguments check.
+
+# If no arguments provided, display the usage.
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 -f command file [file ...]"
+    echo "Usage: $0 -e command [-e command ...] [file ...]"
+    exit 1
+fi
+
+# The script now passes all arguments to the Python script instead of just one.
+# "$@" is used to pass all original arguments received by the script.
+"$script_dir/msed.py" "$@"
+
+
